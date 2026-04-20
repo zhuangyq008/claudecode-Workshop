@@ -1,0 +1,61 @@
+{
+  "GroupDescription": "shokz-app-sg - Application Security Group",
+  "GroupId": "sg-0123456789abcdef0",
+  "IpPermissions": [
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 22,
+      "ToPort": 22,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "SSH from anywhere"
+        }
+      ]
+    },
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 3389,
+      "ToPort": 3389,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "RDP from anywhere"
+        }
+      ]
+    },
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 3306,
+      "ToPort": 3306,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "MySQL from anywhere"
+        }
+      ]
+    },
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 0,
+      "ToPort": 65535,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "All TCP ports from anywhere"
+        }
+      ]
+    }
+  ],
+  "IpPermissionsEgress": [
+    {
+      "IpProtocol": "-1",
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "All outbound traffic"
+        }
+      ]
+    }
+  ]
+}
